@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+<head>
+    <title>Библиотека</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/plugins/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<h1 class="text-center">Все книги</h1><br>
+<div class="container text-center text-md-start mt-5" th:each="el : ${books}">
+    <h3 th:text="${el.title}"/>
+    <p th:text="${el.author}"/>
+    <a class="btn btn-primary" th:href="'/book/' + ${el.id}">Подробнее</a>
+</div>
+
+<div th:insert="~{blocks/footer :: footer}"></div>
+</body>
+</html>

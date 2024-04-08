@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+<head>
+    <title>Книга</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/plugins/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<h1 class="text-center">Подробнее о книге</h1><br>
+
+<div class="container mx-auto text-center" th:each="el : ${book}">
+    <h3 class="" th:text="${el.title}"/>
+    <p th:text="${el.fulltext}"/>
+    <a class="btn btn-primary" th:href="'/book/' + ${el.id} + '/edit'">Редактировать</a>
+    <p></p>
+    <form th:action="'/book/' + ${el.id} +'/remove'" method="post">
+        <button type="submit" class="btn btn-primary">Удалить</button>
+    </form>
+</div>
+
+<div th:insert="~{blocks/footer :: footer}"></div>
+</body>
+</html>

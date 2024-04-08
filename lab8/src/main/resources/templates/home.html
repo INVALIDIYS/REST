@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="RU">
+<head>
+    <title>Главная страница</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/plugins/bootstrap/bootstrap.css}" rel="stylesheet">
+    <script th:src="@{/js/title.js}"></script>
+    <script th:src="@{/plugins/jquery/jquery-3.7.1.js}"></script>
+    <script th:src="@{/plugins//bootstrap/bootstrap.js}"></script>
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+
+<h1 class="text-center">Главная</h1><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img th:src="@{images/book.png}" height="300px" class="img-fluid" alt="Фото книги"><br>
+        </div>
+        <div class="col-sm">
+            <h3 id="myhead" class="text-center">Редактирование книги</h3>
+            <form class="form-row">
+                <p class="text-center">Название книги:</p>
+                <input placeholder="Введите название книги" type="text" id="bookname" onchange="changehead()"
+                       class="form-control" required><br>
+                <select class="form-select">
+                    <option>Автор №1</option>
+                    <option>Автор №2</option>
+                    <option>Автор №3</option>
+                    <option>Автор №4</option>
+                </select><br>
+                <p class="text-center">Дата выпуска:</p>
+                <input class="form-control" placeholder="Введите дату выпуска" type="data" required><br>
+                <p class="text-center">Выбор ориентации:</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Альбомная <input type="radio" name="knop" required></li>
+                    <li class="list-group-item">Книжная <input type="radio" name="knop" required></li>
+                </ul>
+                <br>
+                <table border="" class="table">
+                    <tr>
+                        <td>Автор книги</td>
+                        <td>Название книги</td>
+                    </tr>
+                    <tr>
+                        <td>Автор №1</td>
+                        <td>Книга 1</td>
+                    </tr>
+                    <tr>
+                        <td>Автор №1</td>
+                        <td>Книга 2</td>
+                    </tr>
+                    <tr>
+                        <td>Автор №2</td>
+                        <td>Книга 1</td>
+                    </tr>
+                    <tr>
+                        <td>Автор №3</td>
+                        <td>Книга 10</td>
+                    </tr>
+                </table>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Сохранить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<div th:insert="~{blocks/footer :: footer}"></div>
+</body>
+</html>

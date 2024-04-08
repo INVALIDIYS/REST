@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="RU">
+<head>
+    <title>О нас</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/plugins/bootstrap/bootstrap.css}" rel="stylesheet">
+    <script th:src="@{/plugins/jquery/jquery-3.7.1.js}"></script>
+    <script th:src="@{/plugins/bootstrap/bootstrap.js}"}></script>
+    <script th:src="@{/js/get.js}"></script>
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<h1 class="text-center">Тут много интересного</h1>
+
+<h2 class="text-center">Контакты<br><br><br>
+    <button>GET</button>
+</h2>
+
+<section class="">
+    <div class="container-fluid">
+        <div class="row  vh-100">
+            <div class="col-lg-6">
+                <div class="position-relative start-50  translate-middle-y top-50">
+                    <img th:src="@{images/map.png}" width="350px" alt="Местоположение">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative translate-middle-y top-50">
+                    <p><i class="fas fa-home me-3">Адрес:</i>Таганрог, 347900, RU</p>
+                    <p><i class="fas fa-envelope me-3">E-mail:</i>sfedu@sfedu.ru</p>
+                    <p><i class="fas fa-phone me-3">Телефон:</i>+7-999-999-99-99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:insert="~{blocks/footer :: footer}"></div>
+</body>
+</html>
